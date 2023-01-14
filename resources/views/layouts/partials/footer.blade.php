@@ -23,6 +23,7 @@
                 <h4 class="text-uppercase mb-4">{{ __('About Persian Classic Product') }}</h4>
                 <p class="lead mb-0">
                     {{ __('Persian Classic Product is a online shop, products for persian all around the world.') }}
+
                 </p>
             </div>
         </div>
