@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         @include('layouts.partials.head')
+        @livewireStyles
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -211,5 +212,6 @@
         </div>
         <!-- Bootstrap core JS-->
         @include('layouts.partials.script')
+        @livewireScripts
     </body>
 </html>
