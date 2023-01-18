@@ -51,7 +51,7 @@
 <section class="page-section mb-0" id="mission">
     <div class="container">
         <!-- Mission Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white">{{ __('Our Mission') }}</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ __('Our Mission') }}</h2>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
