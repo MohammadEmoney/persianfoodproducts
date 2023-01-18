@@ -13,11 +13,11 @@
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ __('Contact') }}</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-transparent text-white border-0">{{ __('Tel') }}: +982632554120 ({{ __('Iran') }})</li>
-                    <li class="list-group-item bg-transparent text-white border-0">{{ __('Tel') }}: +39097122999 ({{ __('Italy') }})</li>
-                    <li class="list-group-item bg-transparent text-white border-0">{{ __('Mobile No') }}: +989127179262 ({{ __('Iran') }})</li>
-                    <li class="list-group-item bg-transparent text-white border-0">{{ __('Mobile No') }}: +393516520568 ({{ __('Italy') }})</li>
-                    <li class="list-group-item bg-transparent text-white border-0">{{ __('Email') }}: info(a)persianfoodproducts.com</li>
+                    <li class="list-group-item bg-transparent text-white border-0"><i class="fa fa-phone"></i>: +982632554120 ({{ __('Iran') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0"><i class="fa fa-phone"></i>: +39097122999 ({{ __('Italy') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0"><i class="fa fa-mobile"></i>: +989127179262 ({{ __('Iran') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0"><i class="fa fa-mobile"></i>: +393516520568 ({{ __('Italy') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0"><i class="fa fa-envelope"></i>: info(a)persianfoodproducts.com</li>
                 </ul>
             </div>
             <!-- Footer Social Icons-->
