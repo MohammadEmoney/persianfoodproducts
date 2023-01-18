@@ -5,16 +5,18 @@
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ __('Location') }}</h4>
                 <p class="lead mb-0">
-                    {{ __('2215 John Daniel Drive') }}
+                    {{ __('messages.address_1') }}
                     <br />
-                    {{ __('Clark, MO 65243') }}
+                    {{ __('messages.address_2') }}
                 </p>
             </div>
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ __('Contact') }}</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Tel') }}: +39 (0)40 2443 2128</li>
-                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Fax') }}: +39 (0)40 2443 2128</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Tel') }}: +982632554120 ({{ __('Iran') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Tel') }}: +39097122999 ({{ __('Italy') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Mobile No') }}: +989127179262 ({{ __('Iran') }})</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Mobile No') }}: +393516520568 ({{ __('Italy') }})</li>
                     <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Email') }}: info(a)persianfoodproducts.com</li>
                 </ul>
             </div>
