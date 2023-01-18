@@ -48,7 +48,7 @@
     </div>
 </section>
 <!-- Mission Section-->
-<section class="page-section bg-primary text-white mb-0" id="mission">
+<section class="page-section mb-0" id="mission">
     <div class="container">
         <!-- Mission Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-white">{{ __('Our Mission') }}</h2>
@@ -63,6 +63,25 @@
             <p class="lead">{{ __('messages.mission') }}</p>
         </div>
         <!-- Mission Section Button-->
+    </div>
+</section>
+
+<!-- Activity Section-->
+<section class="page-section bg-primary text-white mb-0" id="activity">
+    <div class="container">
+        <!-- Activity Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">{{ __('Fields Of Activity') }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Activity Section Content-->
+        <div class="text-center mt-4">
+            <p class="lead">{{ __('messages.activity') }}</p>
+        </div>
+        <!-- Activity Section Button-->
     </div>
 </section>
 <!-- Contact Section-->
