@@ -13,9 +13,9 @@
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ __('Contact') }}</h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-transparent text-white">{{ __('Tel') }}: +39 (0)40 2443 2128</li>
-                    <li class="list-group-item bg-transparent text-white">{{ __('Fax') }}: +39 (0)40 2443 2128</li>
-                    <li class="list-group-item bg-transparent text-white">{{ __('Email') }}: info(a)persianfoodproducts.com</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Tel') }}: +39 (0)40 2443 2128</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Fax') }}: +39 (0)40 2443 2128</li>
+                    <li class="list-group-item bg-transparent text-white border-0 lead">{{ __('Email') }}: info(a)persianfoodproducts.com</li>
                 </ul>
             </div>
             <!-- Footer Social Icons-->
