@@ -5,9 +5,10 @@
             <div class="col-lg-3 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">{{ __('Location') }}</h4>
                 <p class="lead mb-0">
-                    {{ __('messages.address_1') }}
+                    <i class="fa fa-location-pin"></i> {{ __('messages.address_1') }}
                     <br />
-                    {{ __('messages.address_2') }}
+                    <br />
+                    <i class="fa fa-location-pin"></i> {{ __('messages.address_2') }}
                 </p>
             </div>
             <div class="col-lg-3 mb-5 mb-lg-0">
