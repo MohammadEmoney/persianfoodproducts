@@ -19,11 +19,13 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->text('excerpt')->nullable();
             $table->longText('content')->nullable();
+            $table->foreignId('category_id')->constrained('categories');
             $table->boolean('is_visible')->default(1);
             $table->boolean('is_featured')->default(0);
             $table->bigInteger('views')->default(0);
             $table->longText('contents')->nullable();
             $table->longText('excerpts')->nullable();
+            $table->longText('names')->nullable();
             $table->longText('extra')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

@@ -37,14 +37,8 @@ class CategoryResource extends Resource
                     TextInput::make('name')->label('Name')->required()->reactive()
                             ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
                     TextInput::make('slug')->label('Slug'),
-                    FilamentBuilder::make('names')
-                        ->blocks([
-                            FilamentBuilder\Block::make('translation')
-                                ->schema([
-                                    TextInput::make('fa')->label('Farsi')->required(),
-                                    TextInput::make('it')->label('Italian')->required()
-                                ]),
-                            ]),
+                    TextInput::make('names.fa')->label('Farsi')->required(),
+                    TextInput::make('names.it')->label('Italian')->required(),
                     Select::make('parent_id')->relationship('parent', 'name'),
                     RichEditor::make('description')
                                  ->label(__('Description'))
@@ -61,18 +55,22 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                   ->label('Name')
+                   ->label('English Name')
                    ->searchable()
                    ->sortable(),
-                TextColumn::make('slug')
-                        ->label(__('English Name'))
+                TextColumn::make('names.fa')
+                        ->label(__('Persian Name'))
+                        ->searchable()
+                        ->sortable(),
+                TextColumn::make('names.it')
+                        ->label(__('Italian Name'))
                         ->searchable()
                         ->sortable(),
                 TextColumn::make('parent.name')
                         ->label('Parent Name')
                         ->searchable()
                         ->sortable(),
-                ToggleColumn::make('is_visible')
+                ToggleColumn::make('is_active')
                             ->label('Visibelity')
                             ->sortable(),
                 TextColumn::make('updated_at')
