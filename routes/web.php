@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +24,12 @@ Route::get('/languages', [\App\Http\Controllers\Front\LanguageController::class,
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('categories', [\App\Http\Controllers\Front\CategoryController::class, 'index'])->name('categories.index');
+Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
+    Route::get('about', [AboutController::class, 'index'])->name('about');
+    Route::get('contact', [ContactController::class, 'index'])->name('contact');
+});
 
 

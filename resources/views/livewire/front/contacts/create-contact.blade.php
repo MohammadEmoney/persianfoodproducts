@@ -10,14 +10,30 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Contact Section Form-->
-            <div class="row justify-content-center">
+            <div class="row ">
+                <div class="col-lg-4 col-xl-5">
+                    <div class="card border-0">
+                        <div class="card-body p-3">
+                            <div>
+                                <h5><i class="fa fa-location-dot"></i> {{ __('messages.app_name') }} {{ __('Location') }}</h5>
+                                <p>
+                                    {{ __('messages.address_1') }}
+                                    <br />
+                                    <br />
+                                    {{ __('messages.address_2') }}
+                                </p>
+                            </div>
+                            <div>
+                                <p><span class="text-info">{{ __('Phone') }}:</span> +982632554120 ({{ __('Iran') }})</p>
+                                <p><span class="text-info">{{ __('Phone') }}:</span> +39097122999  ({{ __('Italy') }})</p>
+                                <p><span class="text-info">{{ __('Mobile No.') }}:</span> +989127179262 ({{ __('Iran') }})</p>
+                                <p><span class="text-info">{{ __('Mobile No.') }}:</span> +393516520568 ({{ __('Italy') }})</p>
+                                <p><span class="text-info">{{ __('Email') }}:</span> persianfoodproducts@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-8 col-xl-7">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Name input-->
@@ -45,21 +61,7 @@
                             <label for="message">{{ __('Message') }}</label>
                             <div class="invalid-feedback" data-sb-feedback="message:required">{{ __('A message is required.') }}</div>
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        {{-- <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div> --}}
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
+
                         <!-- an error submitting the form-->
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                         <!-- Submit Button-->
