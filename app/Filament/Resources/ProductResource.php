@@ -2,16 +2,19 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\CategoryResource\RelationManagers\CategoriesRelationManager;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -33,9 +36,10 @@ class ProductResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    TextInput::make('name')->label('Name')->unique()->required()->reactive()
+                    TextInput::make('name')->label('Name')->unique(ignoreRecord:true)->required()->reactive()
                             ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
-                    TextInput::make('slug')->unique()->label('Slug'),
+                    TextInput::make('slug')->unique(ignoreRecord:true)->label('Slug'),
+                    TextInput::make('scientific_name')->label('Scientific Name')->required(),
                     TextInput::make('names.fa')->label('Farsi')->required(),
                     TextInput::make('names.it')->label('Italian')->required(),
                     Select::make('category_id')->relationship('category', 'name')->label('Main Category')->required(),
@@ -43,6 +47,10 @@ class ProductResource extends Resource
                                 ->multiple()
                                 ->relationship('categories', 'name')
                                 ->label('Other Categories'),
+                    Select::make('attributeValues')
+                                ->multiple()
+                                ->relationship('attributeValues', 'name')
+                                ->label('Attributes'),
                     Grid::make([
                                     'sm' => 2,
                                     'xl' => 6,
@@ -54,6 +62,17 @@ class ProductResource extends Resource
 
                 ]),
                 Card::make()->schema([
+                    // FileUpload::make('image')->image(),
+                    SpatieMediaLibraryFileUpload::make('SpecialImage')
+                                                                 ->label('Special Image')
+                                                                ->imageCropAspectRatio('16:9')
+                                                                 ->collection('SpecialImage'),
+                    SpatieMediaLibraryFileUpload::make('Gallery')
+                                                ->label(__('Gallery'))
+                                                ->collection('Gallery')
+                                                ->multiple()
+                                                ->maxFiles(10),
+
                     RichEditor::make('content')
                                  ->label(__('English Description'))
                                  ->disableToolbarButtons([
@@ -92,6 +111,10 @@ class ProductResource extends Resource
                     ->label(__('Italian Name'))
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('scientific_name')
+                    ->label(__('Scientific Name'))
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('category.name')
                     ->label('Main Category')
                     ->searchable()
@@ -114,7 +137,7 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CategoriesRelationManager::class
         ];
     }
 

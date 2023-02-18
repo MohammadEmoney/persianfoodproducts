@@ -9,10 +9,10 @@ trait LanguageTrait
         $pluralField = $field . 's';
         switch ($value) {
             case 'fa':
-                return $this->pluralField->fa?->$value;
+                return $this->$pluralField->fa?->$value;
                 break;
             case 'it':
-                return $this->pluralField->it?->$value;
+                return $this->$pluralField->it?->$value;
                 break;
 
             default:

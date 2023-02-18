@@ -40,10 +40,18 @@ class Category extends Model
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
-    protected function firstName(): Attribute
+    protected function name(): Attribute
     {
         return Attribute::make(
             get: fn ($value) => $this->getValueByLang($value, 'name'),
         );
+    }
+
+    /**
+     * @return void
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

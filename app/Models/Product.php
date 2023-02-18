@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\Image\Manipulations;
 
-class Product extends Model
+class Product extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +32,7 @@ class Product extends Model
         'views',
         'extra',
         'user_id',
+        'scientific_name'
     ];
 
     /**
@@ -59,4 +63,21 @@ class Product extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function attributeValues()
+    {
+        return $this->belongsToMany(AttributeValue::class);
+    }
+
+    // public function registerMediaConversions(Media $media = null)
+    // {
+    //     $this->addMediaCollection('SpecialImage')
+    //          ->useFallbackPath(public_path('/front/assets/img/placeholder.png'));
+    //     $this->addMediaConversion('thumb')
+    //          ->crop(Manipulations::CROP_CENTER, 400, 333)
+    //          ->performOnCollections('SpecialImage');
+    //     $this->addMediaConversion('70_70')
+    //          ->crop(Manipulations::CROP_CENTER, 70, 70)
+    //          ->performOnCollections('SpecialImage');
+    // }
 }

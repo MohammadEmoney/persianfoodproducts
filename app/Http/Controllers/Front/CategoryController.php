@@ -10,8 +10,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $category = Category::find(3);
+        $category = Category::find(5);
+
         // return $category->names[0]['data']['fa'];
-        return $category;
+        return $category->products->first()->load([
+            'media' => function ($q) {
+                $q->whereCollectionName('SpecialImage');
+            },
+        ])->getFirstMediaUrl('SpecialImage');
     }
 }
