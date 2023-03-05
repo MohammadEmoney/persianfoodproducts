@@ -50,14 +50,14 @@ class AttributeTypeResource extends Resource
                    ->label('English Name')
                    ->searchable()
                    ->sortable(),
-                TextColumn::make('names.fa')
-                    ->label(__('Persian Name'))
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('names.it')
-                    ->label(__('Italian Name'))
-                    ->searchable()
-                    ->sortable(),
+                // TextColumn::make('names.fa')
+                //     ->label(__('Persian Name'))
+                //     ->searchable()
+                //     ->sortable(),
+                // TextColumn::make('names.it')
+                //     ->label(__('Italian Name'))
+                //     ->searchable()
+                //     ->sortable(),
                 TextColumn::make('type')
                     ->label(__('Type'))
                     ->searchable()
