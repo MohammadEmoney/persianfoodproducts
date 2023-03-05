@@ -4,19 +4,19 @@ namespace App\Traits;
 
 trait LanguageTrait
 {
-    public function getValueByLang($value, $field)
+    public function getValueByLang($field, $lang)
     {
         $pluralField = $field . 's';
-        switch ($value) {
+        switch ($lang) {
             case 'fa':
-                return $this->$pluralField->fa?->$value;
+                return $this->$pluralField?->fa;
                 break;
             case 'it':
-                return $this->$pluralField->it?->$value;
+                return $this->$pluralField?->it;
                 break;
 
             default:
-                $field->value;
+                $this->$field;
                 break;
         }
     }

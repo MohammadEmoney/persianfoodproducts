@@ -27,6 +27,8 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('categories', [\App\Http\Controllers\Front\CategoryController::class, 'index'])->name('categories.index');
+Route::get('categories/{category:slug}', [\App\Http\Controllers\Front\CategoryController::class, 'show'])->name('categories.show');
+Route::get('products/{product:slug}', [\App\Http\Controllers\Front\ProductController::class, 'show'])->name('products.show');
 Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('contact', [ContactController::class, 'index'])->name('contact');

@@ -35,17 +35,31 @@ class Category extends Model
         'is_active' => 'boolean',
     ];
 
-    /**
-     * Get the user's first name.
-     *
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
-     */
-    protected function name(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => $this->getValueByLang($value, 'name'),
-        );
-    }
+    // /**
+    //  * Get the user's first name.
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Casts\Attribute
+    //  */
+    // protected function getNameAttribute($value)
+    // {
+    //     dd($value);
+    //     return $this->name;
+    //     // $lang = config('app.locale');
+    //     // $field = 'name';
+    //     // $pluralField = $field . 's';
+    //     // switch ($lang) {
+    //     //     case 'fa':
+    //     //         return $this->$pluralField?->fa;
+    //     //         break;
+    //     //     case 'it':
+    //     //         return $this->$pluralField?->it;
+    //     //         break;
+
+    //     //     default:
+    //     //         $this->name;
+    //     //         break;
+    //     // }
+    // }
 
     /**
      * @return void

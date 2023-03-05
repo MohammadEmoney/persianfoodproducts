@@ -10,7 +10,16 @@
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('front.home') }}">{{ __('Home') }}</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('front.about') }}">{{__('About') }}</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('front.contact') }}">{{__('Contact') }}</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#categories">{{__('Categories') }}</a></li>
+                <li class="nav-item mx-0 mx-lg-1 dropdown">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Categories') }}</a>
+                    <ul class="dropdown-menu w-25">
+                        @foreach ($categories as $category)
+                            <li><a class="dropdown-item" href="{{ route('categories.show', $category->slug) }}">{{ $category->name }}</a></li>
+                        @endforeach
+                        {{-- <li><a class="dropdown-item" href="{{ route('front.langs', ['lang' => 'fa']) }}"><span class="fi fi-ir"></span></a></li>
+                        <li><a class="dropdown-item" href="{{ route('front.langs', ['lang' => 'it']) }}"><span class="fi fi-it"></span></a></li> --}}
+                    </ul>
+                </li>
                 <li class="nav-item mx-0 mx-lg-1 dropdown">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('Lang') }}</a>
                     <ul class="dropdown-menu w-25">
