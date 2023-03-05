@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\ContactController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,4 +35,6 @@ Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
     Route::get('contact', [ContactController::class, 'index'])->name('contact');
 });
 
-
+Route::get('seed/attributes', function(){
+    Artisan::command('db:seed --class=AttributeSeeder');
+});
