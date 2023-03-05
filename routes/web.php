@@ -36,5 +36,7 @@ Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
 });
 
 Route::get('seed/attributes', function(){
-    Artisan::call('db:seed --class=AttributeSeeder');
+    Artisan::call('db:seed --class=AttributeSeeder', [
+        '--force' => true
+     ]);
 });
