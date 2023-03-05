@@ -34,9 +34,3 @@ Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('contact', [ContactController::class, 'index'])->name('contact');
 });
-
-Route::get('seed/attributes', function(){
-    Artisan::call('db:seed --class=AttributeSeeder', [
-        '--force' => true
-     ]);
-});
