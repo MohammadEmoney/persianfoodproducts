@@ -14,12 +14,13 @@
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
-            <div class="input-group rounded w-50">
-                <input type="search" class="form-control rounded" placeholder="{{ __('Search') }}" aria-label="Search" aria-describedby="search-addon" />
-                <span class="input-group-text border-0" id="search-addon">
+            <form action="{{ route('products.search') }}" class="input-group rounded w-50">
+                <input type="search" class="form-control rounded" name="search"
+                placeholder="{{ __('Search') }}" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="input-group-text border-0" id="search-addon">
                   <i class="fas fa-search"></i>
-                </span>
-              </div>
+                </button>
+            </form>
         </div>
     </div>
 </section>

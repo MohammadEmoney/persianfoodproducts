@@ -69,6 +69,16 @@ class Product extends Model implements HasMedia
         return $this->belongsToMany(AttributeValue::class);
     }
 
+    public function scopeIsVisible($query)
+    {
+        $query->where('is_visible', true);
+    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
     // public function registerMediaConversions(Media $media = null)
     // {
     //     $this->addMediaCollection('SpecialImage')

@@ -58,6 +58,56 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row justify-content-center">
+                @foreach ($relatedProducts as $relatedProduct)
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div>
+                                <img src="{{ asset('front/assets/img/1.jpg') }}" class="w-100" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4>{{ $relatedProduct->name }}</h4>
+                                <p>{{ $relatedProduct->created_at }}</p>
+                            </div>
+                            <div class="card-footer bg-transaparent">
+                                <a href="{{  route('products.show', $relatedProduct->slug) }}" class="btn btn-primary">{{ __('Details') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="row">
+                <h3>{{ __('Comments') }}</h3>
+
+                @forelse ($product->comments as $commnent)
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <span>{{ $comment->user->full_name }}</span>
+                            <p>{{ $comment->body }}</p>
+                            <small>{{ comment->created_at->format('Y:mm:dd') }}</small>
+                        </div>
+                    </div>
+                @empty
+                    <p class="mb-3 p-2 text-info fw-bold">{{ __('No Comments!') }} <i class="fa fa-comment"></i></p>
+                @endforelse
+
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form action="{{ route('products.comment', $product->slug) }}">
+                            <div class="form-group mb-3">
+                                <label for="body" class="fw-bold mb-2">{{ __('Comment') }}</label>
+                                <textarea name="body" id="body" class="form-control" cols="30" rows="3">{{ old('body', "Leave a comment...") }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
