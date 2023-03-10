@@ -28,18 +28,7 @@
             <div class="row justify-content-center">
                 @foreach ($products as $product)
                     <div class="col-md-4">
-                        <div class="card">
-                            <div>
-                                <img src="{{ asset('front/assets/img/1.jpg') }}" class="w-100" alt="">
-                            </div>
-                            <div class="card-body">
-                                <h4>{{ $product->name }}</h4>
-                                <p>{{ $product->created_at }}</p>
-                            </div>
-                            <div class="card-footer bg-transaparent">
-                                <a href="{{  route('products.show', $product->slug) }}" class="btn btn-primary">{{ __('Details') }}</a>
-                            </div>
-                        </div>
+                        <livewire:front.products.card :product="{{ $product }}" />
                     </div>
                 @endforeach
             </div>

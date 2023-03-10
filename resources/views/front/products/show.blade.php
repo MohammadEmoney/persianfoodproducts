@@ -25,14 +25,8 @@
                     </span>
                 </div>
             </div>
-            <!-- Icon Divider-->
-            {{-- <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div> --}}
             <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mb-3">
                 <div class="col-md-6">
                     <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="" class="w-100">
                 </div>
@@ -59,21 +53,16 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="row mb-3">
                 @foreach ($relatedProducts as $relatedProduct)
                     <div class="col-md-4">
-                        <div class="card">
-                            <div>
-                                <img src="{{ asset('front/assets/img/1.jpg') }}" class="w-100" alt="">
-                            </div>
-                            <div class="card-body">
-                                <h4>{{ $relatedProduct->name }}</h4>
-                                <p>{{ $relatedProduct->created_at }}</p>
-                            </div>
-                            <div class="card-footer bg-transaparent">
-                                <a href="{{  route('products.show', $relatedProduct->slug) }}" class="btn btn-primary">{{ __('Details') }}</a>
-                            </div>
-                        </div>
+                        <livewire:front.products.card :product="$relatedProduct" />
                     </div>
                 @endforeach
             </div>
@@ -86,7 +75,7 @@
                         <div class="card-body">
                             <span>{{ $comment->user->full_name }}</span>
                             <p>{{ $comment->body }}</p>
-                            <small>{{ comment->created_at->format('Y:mm:dd') }}</small>
+                            <small>{{ comment->created_at->format('Y-m-d') }}</small>
                         </div>
                     </div>
                 @empty

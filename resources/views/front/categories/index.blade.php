@@ -16,7 +16,8 @@
             <div class="row justify-content-center">
                 @foreach ($products as $product)
                     <div class="col-md-4">
-                        <div class="card">
+                        <livewire:front.products.card :product="$product" />
+                        {{-- <div class="card">
                             <div>
                                 <img src="{{ asset('front/assets/img/1.jpg') }}" class="w-100" alt="">
                             </div>
@@ -27,7 +28,7 @@
                             <div class="card-footer bg-transparent">
                                 <a href="{{  route('products.show', $product->slug) }}" class="btn btn-primary">{{ __('Details') }}</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 @endforeach
             </div>
