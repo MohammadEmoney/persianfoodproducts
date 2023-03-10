@@ -34,7 +34,7 @@
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="">
+                    <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="" class="w-100">
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-danger">{{ $product->name }}</h4>
@@ -96,10 +96,11 @@
 
                 <div class="card mb-3">
                     <div class="card-body">
-                        <form action="{{ route('products.comment', $product->slug) }}">
+                        <form action="{{ route('products.comment', $product->slug) }}" method="POST">
+                            @csrf
                             <div class="form-group mb-3">
                                 <label for="body" class="fw-bold mb-2">{{ __('Comment') }}</label>
-                                <textarea name="body" id="body" class="form-control" cols="30" rows="3">{{ old('body', "Leave a comment...") }}</textarea>
+                                <textarea name="body" id="body" class="form-control" cols="30" rows="3" placeholder="Leave a comment...">{{ old('body') }}</textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
