@@ -55,7 +55,8 @@
 
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                {{-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> --}}
+                <div class="divider-custom-icon text-warning">{{ __('Related Products') }}</div>
                 <div class="divider-custom-line"></div>
             </div>
 
