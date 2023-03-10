@@ -49,6 +49,9 @@
                                 @endforeach
                             </p>
                         @endforeach
+                        <p class="mb-2">
+                            <strong>{{ __('Price') }}: </strong> <a href="tel:+39097122999" class="btn btn-sm btn-primary">{{ __('Call') }}</a>
+                        </p>
                     </div>
                 </div>
             </div>
