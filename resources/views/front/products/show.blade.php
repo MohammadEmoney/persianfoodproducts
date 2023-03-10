@@ -62,7 +62,7 @@
 
             <div class="row mb-3">
                 @foreach ($relatedProducts as $relatedProduct)
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <livewire:front.products.card :product="$relatedProduct" />
                     </div>
                 @endforeach
