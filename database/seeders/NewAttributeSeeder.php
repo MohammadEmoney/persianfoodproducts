@@ -571,6 +571,23 @@ class NewAttributeSeeder extends Seeder
             "tavazo",
         ];
 
+        foreach (array_unique($colors) as $key => $color) {
+            AttributeValue::updateOrCreate(
+                [
+                    'name' => ucfirst($color),
+                ],
+                [
+                    'attribute_type_id' => 3,
+                    'slug' => Str::slug($color),
+                    'names' => json_encode([
+                        'fa' => $colorsfa[$key],
+                        'it' => ucfirst($colorsit[$key]),
+                    ])
+                ]
+            );
+        }
+
+
         foreach (array_unique($advantages) as $key => $advantage) {
             AttributeValue::updateOrCreate(
                 [
