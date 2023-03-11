@@ -3,7 +3,6 @@
 @section('content')
 @include('layouts.partials.header')
 <section class="page-section portfolio" id="search">
-
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('Search products') }}</h2>

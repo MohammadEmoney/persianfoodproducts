@@ -29,7 +29,7 @@
             <div class="row justify-content-center">
                 @foreach ($products as $product)
                     <div class="col-md-4 mb-3">
-                        <livewire:front.products.card :product="{{ $product }}" />
+                        <livewire:front.products.card :product="$product" />
                     </div>
                 @endforeach
             </div>
