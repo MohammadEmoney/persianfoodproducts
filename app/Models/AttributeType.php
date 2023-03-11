@@ -38,6 +38,28 @@ class AttributeType extends Model
     ];
 
     /**
+     * Get the Category's name.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function getNameAttribute($val)
+    {
+        switch (config('app.locale')) {
+            case 'fa':
+                return $this->names["fa"] ?? $val;
+                break;
+
+            case 'it':
+                return $this->names["it"] ?? $val;
+                break;
+
+            default:
+                return $val;
+                break;
+        }
+    }
+
+    /**
      *
      * @return HasMany
      */

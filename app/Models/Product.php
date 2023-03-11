@@ -49,6 +49,23 @@ class Product extends Model implements HasMedia
         'is_featured' => 'boolean',
     ];
 
+    public function getNameAttribute($val)
+    {
+        switch (config('app.locale')) {
+            case 'fa':
+                return $this->names["fa"] ?? $val;
+                break;
+
+            case 'it':
+                return $this->names["it"] ?? $val;
+                break;
+
+            default:
+                return $val;
+                break;
+        }
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

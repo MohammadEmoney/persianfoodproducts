@@ -6,7 +6,7 @@
     </a>
     <div class="card-body">
         <div class="d-flex">
-            <h4>{{ $product->name }}</h4>
+            <h4 class="text-capitalize">{{ $product->name }}</h4>
             <small class="align-self-center mx-2 text-black-50">{{ $product->sicentific_name }}</small>
         </div>
         <div>

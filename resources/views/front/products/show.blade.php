@@ -4,7 +4,7 @@
 
 @section('content')
     @include('layouts.partials.header')
-    <section class="page-section portfolio" id="search">
+    <section class="page-section portfolio" id="search" dir="{{ App::isLocale('fa') ? "rtl" : "" }}">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <div class="my-3">
@@ -15,7 +15,7 @@
                             <a href="{{ route('categories.show', $item->slug) }}" class="text-decoration-none">
                                 {{ $item->name }}
                             </a>
-                            <i class="fa fa-chevron-right"></i>
+                            <i class="fa fa-chevron-{{ App::isLocale('fa') ? "left" : "right" }}"></i>
                         </span>
                     @endforeach
                     <span>
@@ -93,7 +93,7 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="body" class="fw-bold mb-2">{{ __('Comment') }}</label>
-                                <textarea name="body" id="body" class="form-control" cols="30" rows="3" placeholder="Leave a comment...">{{ old('body') }}</textarea>
+                                <textarea name="body" id="body" class="form-control" cols="30" rows="3" placeholder="{{ __('Leave a comment...') }}">{{ old('body') }}</textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

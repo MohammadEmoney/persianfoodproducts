@@ -32,11 +32,14 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
-Route::get('products/search', [SearchController::class, 'index'])->name('products.search');
-Route::post('products/{product:slug}/comment', [ProductController::class, 'comment'])->name('products.comment')->middleware(['auth']);
-Route::get('products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
+Route::middleware('languages')->group(function(){
+    Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
+    Route::get('products/search', [SearchController::class, 'index'])->name('products.search');
+    Route::post('products/{product:slug}/comment', [ProductController::class, 'comment'])->name('products.comment')->middleware(['auth']);
+    Route::get('products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
+});
+
 Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('contact', [ContactController::class, 'index'])->name('contact');

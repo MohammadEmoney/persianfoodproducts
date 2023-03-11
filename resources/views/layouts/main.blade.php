@@ -4,7 +4,7 @@
         @include('layouts.partials.head')
         @livewireStyles
     </head>
-    <body id="page-top">
+    <body id="page-top" dir="{{ App::isLocale('fa') ? "rtl" : "" }}">
         <!-- Navigation-->
         @include('layouts.partials.nav')
         <!-- Masthead-->
