@@ -74,26 +74,27 @@
             <div class="row">
                 <h3>{{ __('Comments') }}</h3>
 
-                @forelse ($product->comments as $commnent)
+                @forelse ($product->comments as $comment)
                     <div class="card mb-3">
                         <div class="card-body">
-                            <span>{{ $comment->user->full_name }}</span>
+                            <span class="fw-bold">{{ $comment->user?->full_name }}</span>
                             <p>{{ $comment->body }}</p>
-                            <small>{{ comment->created_at->format('Y-m-d') }}</small>
+                            <small class="text-black-50">{{ $comment->created_at->format('Y-m-d') }}</small>
                         </div>
                     </div>
                 @empty
                     <p class="mb-3 p-2 text-info fw-bold">{{ __('No Comments!') }} <i class="fa fa-comment"></i></p>
                 @endforelse
-
-
                 <div class="card mb-3">
                     <div class="card-body">
                         <form action="{{ route('products.comment', $product->slug) }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="body" class="fw-bold mb-2">{{ __('Comment') }}</label>
-                                <textarea name="body" id="body" class="form-control" cols="30" rows="3" placeholder="{{ __('Leave a comment...') }}">{{ old('body') }}</textarea>
+                                <textarea name="body" id="body" class="form-control" cols="30" rows="3"
+                                    placeholder="{{ __('Leave a comment...') }}" required>
+                                    {{ old('body') }}
+                                </textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>

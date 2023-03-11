@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Front;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CommentRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class CommentRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,15 @@ class CommentRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'body' => 'required|string|min:3'
+        ];
+    }
+
+    public function validated($key = null, $default = null)
+    {
+        return [
+            'body' => $this->body,
+            'user_id' => Auth::id()
         ];
     }
 }

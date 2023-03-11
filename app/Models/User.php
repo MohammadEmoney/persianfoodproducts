@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable implements FilamentUser, HasName
 {
@@ -53,9 +54,28 @@ class User extends Authenticatable implements FilamentUser, HasName
         'phone_verified_at' => 'datetime',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $appends = [
+        'full_name'
+    ];
+
     public function canAccessFilament(): bool
     {
         return str_ends_with($this->email, '@persianclassicproducts.com') && $this->hasVerifiedEmail();
+    }
+
+    /**
+     * Determine if the user is an administrator.
+     */
+    protected function fullName(): Attribute
+    {
+        return new Attribute(
+            get: fn () =>  "{$this->first_name} {$this->last_name}",
+        );
     }
 
     public function getFilamentName(): string
