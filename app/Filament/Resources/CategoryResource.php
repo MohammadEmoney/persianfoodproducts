@@ -60,11 +60,17 @@ class CategoryResource extends Resource
                    ->sortable(),
                 TextColumn::make('names.fa')
                         ->label(__('Persian Name'))
-                        ->searchable()
+                        ->searchable(query: function (Builder $query, string $search): Builder {
+                            return $query
+                                ->where('names->fa', 'like', "%{$search}%");
+                        })
                         ->sortable(),
                 TextColumn::make('names.it')
                         ->label(__('Italian Name'))
-                        ->searchable()
+                        ->searchable(query: function (Builder $query, string $search): Builder {
+                            return $query
+                                ->where('names->it', 'like', "%{$search}%");
+                        })
                         ->sortable(),
                 TextColumn::make('parent.name')
                         ->label('Parent Name')
