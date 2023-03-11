@@ -16,6 +16,7 @@
                     </button>
                 </form>
             </div>
+
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{ __('Search result for:') }} {{ $search }}</h2>
             <!-- Icon Divider-->
