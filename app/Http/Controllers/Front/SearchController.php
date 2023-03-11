@@ -17,7 +17,7 @@ class SearchController extends Controller
                     ->orWhere('names->it', "LIKE", "%$request->search%");
         })->isVisible()
         ->orderBy($request->order ?? 'created_at', $request->direction ?? "desc")
-        ->get();
+        ->paginate(15);
         $search = $request->search;
         return view('front.search.index', compact('products', 'search'));
     }

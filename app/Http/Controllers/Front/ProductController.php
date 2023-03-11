@@ -13,10 +13,11 @@ class ProductController extends Controller
     {
         $product->load('category');
         $relatedProducts = Product::isVisible()
+                            ->inRandomOrder()
                             ->where('id', "!=", $product->id)
                             ->where('category_id', $product->category_id)
                             ->latest()
-                            ->take(5)
+                            ->take(6)
                             ->get();
         return view('front.products.show', compact('product', 'relatedProducts'));
     }
