@@ -19,6 +19,7 @@ class ProductController extends Controller
                             ->latest()
                             ->take(6)
                             ->get();
+        $product->increment('views');
         return view('front.products.show', compact('product', 'relatedProducts'));
     }
 
