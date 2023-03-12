@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AttributeValue;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class NewAttributeSeeder extends Seeder
@@ -571,157 +572,134 @@ class NewAttributeSeeder extends Seeder
             "tavazo",
         ];
 
-        foreach (array_unique($colors) as $key => $color) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($color),
-                ],
-                [
-                    'attribute_type_id' => 3,
-                    'slug' => Str::slug($color),
-                    'names' => json_encode([
-                        'fa' => $colorsfa[$key],
-                        'it' => ucfirst($colorsit[$key]),
-                    ])
-                ]
-            );
-        }
-
-
+        $newTastes = [];
+        $newcolors = [];
+        $newaroma = [];
+        $newforms = [];
+        $newstorages = [];
+        $newshelfLife = [];
+        $newpackaging = [];
+        $newbrands = [];
+        $newadvantages = [];
         foreach (array_unique($advantages) as $key => $advantage) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($advantage),
-                ],
-                [
-                    'attribute_type_id' => 1,
-                    'slug' => Str::slug($advantage),
-                    'names' => json_encode([
-                        'fa' => $advantagesfa[$key],
-                        'it' => ucfirst($advantagesit[$key]),
-                    ])
-                ]
-            );
+            $newadvantages[] = [
+                'attribute_type_id' => 1,
+                'name' => ucfirst($advantage),
+                'slug' => Str::slug($advantage),
+                'names' => json_encode([
+                    'fa' => $advantagesfa[$key],
+                    'it' => ucfirst($advantagesit[$key]),
+                ])
+            ];
         }
+
         foreach (array_unique($tastes) as $key => $taste) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($taste),
-                ],
-                [
-                    'attribute_type_id' => 2,
-                    'slug' => Str::slug($taste),
-                    'names' => json_encode([
-                        'fa' => $tastesfa[$key],
-                        'it' => ucfirst($tastesit[$key]),
-                    ])
-                ]
-            );
+            $newTastes[] = [
+                'attribute_type_id' => 2,
+                'name' => ucfirst($taste),
+                'slug' => Str::slug($taste),
+                'names' => json_encode([
+                    'fa' => $tastesfa[$key],
+                    'it' => ucfirst($tastesit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($colors) as $key => $color) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($color),
-                ],
-                [
-                    'attribute_type_id' => 3,
-                    'slug' => Str::slug($color),
-                    'names' => json_encode([
-                        'fa' => $colorsfa[$key],
-                        'it' => ucfirst($colorsit[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($colors) as $key =>  $color) {
+            $newcolors[] = [
+                'attribute_type_id' => 3,
+                'name' => ucfirst($color),
+                'slug' => Str::slug($color),
+                'names' => json_encode([
+                    'fa' => $colorsfa[$key],
+                    'it' => ucfirst($colorsit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($aroma) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 4,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $aromafa[$key],
-                        'it' => ucfirst($aromait[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($aroma) as $key =>  $val) {
+            $newaroma[] = [
+                'attribute_type_id' => 4,
+                'name' => ucfirst($val),
+                'slug' => Str::slug($val),
+                'names' => json_encode([
+                    'fa' => $aromafa[$key],
+                    'it' => ucfirst($aromait[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($form) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 5,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $formfa[$key],
-                        'it' => ucfirst($formit[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($form) as $key =>  $form) {
+            $newforms[] = [
+                'attribute_type_id' => 5,
+                'name' => ucfirst($form),
+                'slug' => Str::slug($form),
+                'names' => json_encode([
+                    'fa' => $formfa[$key],
+                    'it' => ucfirst($formit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($storage) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 6,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $storagefa[$key],
-                        'it' => ucfirst($storageit[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($storage) as $key =>  $storage) {
+            $newstorages[] = [
+                'attribute_type_id' => 6,
+                'name' => ucfirst($storage),
+                'slug' => Str::slug($storage),
+                'names' => json_encode([
+                    'fa' => $storagefa[$key],
+                    'it' => ucfirst($storageit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($shelfLife) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 7,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $shelfLifefa[$key],
-                        'it' => ucfirst($shelfLifeit[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($shelfLife) as $key =>  $val) {
+            $newshelfLife[] = [
+                'attribute_type_id' => 7,
+                'name' => ucfirst($val),
+                'slug' => Str::slug($val),
+                'names' => json_encode([
+                    'fa' => $shelfLifefa[$key],
+                    'it' => ucfirst($shelfLifeit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($packaging) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 8,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $packagingfa[$key],
-                        'it' => ucfirst($packagingit[$key]),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($packaging) as $key =>  $val) {
+            $newpackaging[] = [
+                'attribute_type_id' => 8,
+                'name' => ucfirst($val),
+                'slug' => Str::slug($val),
+                'names' => json_encode([
+                    'fa' => $packagingfa[$key],
+                    'it' => ucfirst($packagingit[$key]),
+                ])
+            ];
         }
-        foreach (array_unique($brands) as $key => $val) {
-            AttributeValue::updateOrCreate(
-                [
-                    'name' => ucfirst($val),
-                ],
-                [
-                    'attribute_type_id' => 9,
-                    'slug' => Str::slug($val),
-                    'names' => json_encode([
-                        'fa' => $val,
-                        'it' => ucfirst($val),
-                    ])
-                ]
-            );
+
+        foreach (array_unique($brands) as $brand) {
+            $newbrands[] = [
+                'attribute_type_id' => 9,
+                'name' => ucfirst($brand),
+                'slug' => Str::slug($brand),
+                'names' => json_encode([
+                    'fa' => ucfirst($brand),
+                    'it' => ucfirst($brand),
+                ])
+            ];
         }
+
+        $data = array_merge($newadvantages, $newaroma, $newbrands, $newcolors, $newforms, $newpackaging, $newshelfLife, $newstorages, $newTastes);
+
+
+        foreach($data as $key => $attr){
+            if(AttributeValue::where('name', $attr['name'])->first()){
+                unset($data[$key]);
+            }
+        }
+
+        // dd($data);
+
+        DB::table('attribute_values')->insert($data);
     }
 }
