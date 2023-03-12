@@ -56,14 +56,20 @@ class AttributeTypeResource extends Resource
                         return $query
                             ->where('names->fa', 'like', "%{$search}%");
                     })
-                    ->sortable(),
+                    ->sortable(query: function (Builder $query, string $direction): Builder {
+                        return $query
+                            ->orderBy('names->fa', $direction);
+                    }),
                 TextColumn::make('names.it')
                     ->label(__('Italian Name'))
                     ->searchable(query: function (Builder $query, string $search): Builder {
                         return $query
                             ->where('names->it', 'like', "%{$search}%");
                     })
-                    ->sortable(),
+                    ->sortable(query: function (Builder $query, string $search): Builder {
+                        return $query
+                            ->where('names->it', 'like', "%{$search}%");
+                    }),
                 TextColumn::make('type')
                     ->label(__('Type'))
                     ->searchable()

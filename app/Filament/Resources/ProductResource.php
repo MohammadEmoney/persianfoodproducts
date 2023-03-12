@@ -109,20 +109,30 @@ class ProductResource extends Resource
                         return $query
                             ->where('names->fa', 'like', "%{$search}%");
                     })
-                    ->sortable(),
+                    ->sortable(query: function (Builder $query, string $direction): Builder {
+                        return $query
+                            ->orderBy('names->fa', $direction);
+                    }),
                 TextColumn::make('names.it')
                     ->label(__('Italian Name'))
                     ->searchable(query: function (Builder $query, string $search): Builder {
                         return $query
                             ->where('names->it', 'like', "%{$search}%");
                     })
-                    ->sortable(),
+                    ->sortable(query: function (Builder $query, string $direction): Builder {
+                        return $query
+                            ->orderBy('names->it', $direction);
+                    }),
                 TextColumn::make('scientific_name')
                     ->label(__('Scientific Name'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('category.name')
                     ->label('Main Category')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('views')
+                    ->label('Views')
                     ->searchable()
                     ->sortable(),
                 ToggleColumn::make('is_visible')
