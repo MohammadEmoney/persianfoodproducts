@@ -2,6 +2,21 @@
 
 @section('title', $title = $product->name)
 
+@section('styles')
+<style>
+    .carousel-indicators{
+        bottom: -2em !important;
+    }
+    .carousel-indicators button img{
+        height: 4em !important;
+    }
+
+    #carouselProductIndicators {
+        height: 320px !important;
+    }
+</style>
+@endsection
+
 @section('content')
     @include('layouts.partials.header')
     <section class="page-section portfolio" id="search" dir="{{ App::isLocale('fa') ? 'rtl' : '' }}">
@@ -26,9 +41,49 @@
                 </div>
             </div>
             <!-- Portfolio Grid Items-->
+            {{-- @dd($product->getMedia('Gallery')[0]->getUrl()) --}}
             <div class="row justify-content-center mb-3">
                 <div class="col-md-6">
-                    <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="" class="w-100">
+                    {{-- <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="" class="w-100"> --}}
+                    <!-- Carousel wrapper -->
+                    <div id="carouselProductIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Slides -->
+                        <div class="carousel-inner mb-5">
+                            <div class="carousel-item active">
+                                <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" class="d-block w-100"
+                                    alt="{{ $product->name }}" />
+                            </div>
+                            @foreach ($product->getMedia('Gallery') as $media)
+                                <div class="carousel-item">
+                                    <img src="{{ $media->getUrl() }}" class="d-block w-100"
+                                        alt="..." />
+                                </div>
+                            @endforeach
+                        </div>
+                        <!-- Slides -->
+
+                        <!-- Thumbnails -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselProductIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1" style="width: 100px;">
+                                <img class="d-block w-100"
+                                    src="{{ $product->getFirstMediaUrl('SpecialImage') }}"
+                                    alt="{{ $product->name }}"
+                                    class="img-fluid" />
+                            </button>
+                            @foreach ($product->getMedia('Gallery') as $media)
+                                <button type="button" data-bs-target="#carouselProductIndicators" data-bs-slide-to="{{ $loop->iteration }}"
+                                    aria-label="Slide 3" style="width: 100px;">
+                                    <img class="d-block w-100"
+                                        src="{{ $media->getUrl() }}"
+                                        alt="{{ $product->name }}"
+                                        class="img-fluid" />
+                                </button>
+                            @endforeach
+                        </div>
+                        <!-- Thumbnails -->
+                    </div>
+                    <!-- Carousel wrapper -->
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-danger">{{ $product->name }}</h4>
@@ -120,22 +175,26 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-transparent border-0">
                                 <a class="btn btn-outline-dark" href="tel:+982632554120">
-                                    <i class="fa fa-phone"></i> <span dir="ltr">+982632554120</span> ({{ __('Iran') }})
+                                    <i class="fa fa-phone"></i> <span dir="ltr">+982632554120</span>
+                                    ({{ __('Iran') }})
                                 </a>
                             </li>
                             <li class="list-group-item bg-transparent border-0">
                                 <a class="btn btn-outline-dark" href="tel:+39097122999">
-                                    <i class="fa fa-phone"></i> <span dir="ltr">+39097122999</span> ({{ __('Italy') }})
+                                    <i class="fa fa-phone"></i> <span dir="ltr">+39097122999</span>
+                                    ({{ __('Italy') }})
                                 </a>
                             </li>
                             <li class="list-group-item bg-transparent border-0">
                                 <a class="btn btn-outline-dark" href="tel:+989127179262">
-                                    <i class="fa fa-mobile"></i> <span dir="ltr">+989127179262</span> ({{ __('Iran') }})
+                                    <i class="fa fa-mobile"></i> <span dir="ltr">+989127179262</span>
+                                    ({{ __('Iran') }})
                                 </a>
                             </li>
                             <li class="list-group-item bg-transparent border-0">
                                 <a class="btn btn-outline-dark" href="tel:+393516520568">
-                                    <i class="fa fa-mobile"></i> <span dir="ltr">+393516520568</span> ({{ __('Italy') }})
+                                    <i class="fa fa-mobile"></i> <span dir="ltr">+393516520568</span>
+                                    ({{ __('Italy') }})
                                 </a>
                             </li>
                             <li class="list-group-item bg-transparent border-0">

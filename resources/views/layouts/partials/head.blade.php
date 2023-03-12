@@ -16,3 +16,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="{{ asset($dir . 'front/css/styles.css') }}" rel="stylesheet" />
+
+@yield('styles')
