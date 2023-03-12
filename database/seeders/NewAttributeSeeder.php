@@ -589,7 +589,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $advantagesfa[$key],
                     'it' => ucfirst($advantagesit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -601,7 +601,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $tastesfa[$key],
                     'it' => ucfirst($tastesit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -613,7 +613,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $colorsfa[$key],
                     'it' => ucfirst($colorsit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -625,7 +625,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $aromafa[$key],
                     'it' => ucfirst($aromait[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -637,7 +637,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $formfa[$key],
                     'it' => ucfirst($formit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -649,7 +649,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $storagefa[$key],
                     'it' => ucfirst($storageit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -661,7 +661,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $shelfLifefa[$key],
                     'it' => ucfirst($shelfLifeit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -673,7 +673,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => $packagingfa[$key],
                     'it' => ucfirst($packagingit[$key]),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -685,7 +685,7 @@ class NewAttributeSeeder extends Seeder
                 'names' => json_encode([
                     'fa' => ucfirst($brand),
                     'it' => ucfirst($brand),
-                ])
+                ], JSON_UNESCAPED_SLASHES)
             ];
         }
 
@@ -693,13 +693,16 @@ class NewAttributeSeeder extends Seeder
 
 
         foreach($data as $key => $attr){
-            if(AttributeValue::where('name', $attr['name'])->first()){
-                unset($data[$key]);
-            }
+            // dd($attr);
+            AttributeValue::where('name', $attr['name'])?->update($attr);
+
+            // if(AttributeValue::where('name', $attr['name'])->first()){
+            //     unset($data[$key]);
+            // }
         }
 
         // dd($data);
 
-        DB::table('attribute_values')->insert($data);
+        // DB::table('attribute_values')->insert($data);
     }
 }
