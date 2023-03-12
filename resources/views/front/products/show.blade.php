@@ -4,7 +4,7 @@
 
 @section('content')
     @include('layouts.partials.header')
-    <section class="page-section portfolio" id="search" dir="{{ App::isLocale('fa') ? "rtl" : "" }}">
+    <section class="page-section portfolio" id="search" dir="{{ App::isLocale('fa') ? 'rtl' : '' }}">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <div class="my-3">
@@ -15,7 +15,7 @@
                             <a href="{{ route('categories.show', $item->slug) }}" class="text-decoration-none">
                                 {{ $item->name }}
                             </a>
-                            <i class="fa fa-chevron-{{ App::isLocale('fa') ? "left" : "right" }}"></i>
+                            <i class="fa fa-chevron-{{ App::isLocale('fa') ? 'left' : 'right' }}"></i>
                         </span>
                     @endforeach
                     <span>
@@ -43,13 +43,17 @@
                                 <strong>{{ $attrType->name }}:</strong>
                                 @foreach ($product->attributeValues->where('attribute_type_id', $attrType->id) as $attrValue)
                                     <span>{{ $attrValue->name }}</span>
-                                    @if(!$loop->last)
+                                    @if (!$loop->last)
                                         <span> / </span>
                                     @endif
                                 @endforeach
                             </p>
                         @endforeach
-                            <strong>{{ __('Price') }}: </strong> <a href="tel:+39097122999" class="btn btn-sm btn-primary">{{ __('Call') }}</a>
+                        <strong>{{ __('Price') }}: </strong>
+                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#callModal">
+                            {{ __('Call') }}
+                        </button>
                         <p class="mb-2">
                         </p>
                     </div>
@@ -100,6 +104,49 @@
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="callModal" tabindex="-1" aria-labelledby="callModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" dir="ltr">
+                        <h5 class="modal-title" id="callModalLabel">{{ __('Contact info') }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent border-0">
+                                <a class="btn btn-outline-dark" href="tel:+982632554120">
+                                    <i class="fa fa-phone"></i> <span dir="ltr">+982632554120</span> ({{ __('Iran') }})
+                                </a>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0">
+                                <a class="btn btn-outline-dark" href="tel:+39097122999">
+                                    <i class="fa fa-phone"></i> <span dir="ltr">+39097122999</span> ({{ __('Italy') }})
+                                </a>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0">
+                                <a class="btn btn-outline-dark" href="tel:+989127179262">
+                                    <i class="fa fa-mobile"></i> <span dir="ltr">+989127179262</span> ({{ __('Iran') }})
+                                </a>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0">
+                                <a class="btn btn-outline-dark" href="tel:+393516520568">
+                                    <i class="fa fa-mobile"></i> <span dir="ltr">+393516520568</span> ({{ __('Italy') }})
+                                </a>
+                            </li>
+                            <li class="list-group-item bg-transparent border-0">
+                                <a class="btn btn-outline-dark" href="mail:info@persianfoodproducts.com">
+                                    <i class="fa fa-envelope"></i> info@persianfoodproducts.com
+                                </a>
+                            </li>
+                        </ul>
+                        {{-- @foreach ($collection as $item)
+
+                        @endforeach --}}
                     </div>
                 </div>
             </div>
