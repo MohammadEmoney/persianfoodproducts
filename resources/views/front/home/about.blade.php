@@ -85,12 +85,12 @@
                     <div class="chef-member">
                         <div class="member-img">
                             <img src="{{ asset('front/assets/img/mahdi.jpg') }}" class="img-fluid" alt="">
-                            <div class="social">
+                            {{-- <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
                                 <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="member-info">
                             <h4>{{ __("Mahdi Rashvand") }}</h4>
@@ -114,12 +114,12 @@
                     <div class="chef-member">
                         <div class="member-img">
                             <img src="{{ asset('front/assets/img/negin.jpg') }}" class="img-fluid" alt="">
-                            <div class="social">
+                            {{-- <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
                                 <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="member-info">
                             <h4>{{ __("Negin Farhang") }}</h4>
