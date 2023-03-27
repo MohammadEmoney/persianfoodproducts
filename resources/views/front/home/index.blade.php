@@ -27,7 +27,7 @@
             <div class="row">
                 @foreach ($data as $category => $products)
                     <div class="col-md-4">
-                        
+
                     </div>
                     <section class="splide mb-4" aria-label="Slide Container Example" id="splide-{{ $loop->iteration }}">
                         <div class="splide__track">
@@ -57,6 +57,14 @@
             gap: '1em',
             drag: 'free',
             perPage: 4,
+            breakpoints: {
+                767: {
+                    perPage: 2,
+                },
+                480:{
+                    perPage:1
+                }
+            }
         });
 
         splide1.mount();
@@ -67,6 +75,14 @@
             gap: '1em',
             drag: 'free',
             perPage: 4,
+            breakpoints: {
+                767: {
+                    perPage: 2,
+                },
+                480:{
+                    perPage:1
+                }
+            }
         });
 
         splide2.mount();
@@ -77,6 +93,14 @@
             gap: '1em',
             drag: 'free',
             perPage: 4,
+            breakpoints: {
+                767: {
+                    perPage: 2,
+                },
+                480:{
+                    perPage:1
+                }
+            }
         });
 
         splide3.mount();
@@ -87,6 +111,14 @@
             gap: '1em',
             drag: 'free',
             perPage: 4,
+            breakpoints: {
+                767: {
+                    perPage: 2,
+                },
+                480:{
+                    perPage:1
+                }
+            }
         });
 
         splide4.mount();
