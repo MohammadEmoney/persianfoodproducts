@@ -28,7 +28,7 @@
                                 <p><span class="text-info">{{ __('Phone') }}:</span> +39097122999  ({{ __('Italy') }})</p>
                                 <p><span class="text-info">{{ __('Mobile No.') }}:</span> +989127179262 ({{ __('Iran') }})</p>
                                 <p><span class="text-info">{{ __('Mobile No.') }}:</span> +393516520568 ({{ __('Italy') }})</p>
-                                <p><span class="text-info">{{ __('Email') }}:</span> persianfoodproducts@gmail.com</p>
+                                <p><span class="text-info">{{ __('Email') }}:</span> persianfoodproduct@gmail.com</p>
                             </div>
                         </div>
                     </div>
