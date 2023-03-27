@@ -64,4 +64,9 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function scopeIsActive($query)
+    {
+        return $query->where('is_active', 1);
+    }
 }

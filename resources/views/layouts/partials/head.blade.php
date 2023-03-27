@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 <!-- Core theme CSS (includes Bootstrap)-->
+<link href="{{ asset($dir . 'front/vendor/splide/splide.min.css') }}" rel="stylesheet" />
 <link href="{{ asset($dir . 'front/css/styles.css') }}" rel="stylesheet" />
 
 @yield('styles')
