@@ -25,7 +25,10 @@
                 <img src="{{ asset( $dir .'front/assets/img/2.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="{{ asset( $dir .'front/assets/img/1.jpg') }}" class="d-block w-100" alt="...">
+                <img src="{{ asset( $dir .'front/assets/img/3.jpg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset( $dir .'front/assets/img/4.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
