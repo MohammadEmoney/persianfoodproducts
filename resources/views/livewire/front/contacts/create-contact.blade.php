@@ -35,37 +35,42 @@
                 </div>
                 <div class="col-lg-8 col-xl-7">
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" wire:submit.prevent="store">
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                            <input class="form-control" id="name" type="text" wire:model="fullname" placeholder="Enter your name..." data-sb-validations="required" />
                             <label for="name">{{ __('Full name') }}</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">{{ __('A name is required.') }}</div>
+                            @error('fullname')
+                                <span class="error text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <input class="form-control" id="email" type="email" wire:model="email" placeholder="name@example.com" data-sb-validations="required,email" />
                             <label for="email">{{ __('Email address') }}</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">{{ __('An email is required.') }}</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">{{ __('Email is not valid.') }}</div>
+                            @error('email')
+                                <span class="error text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                            <input class="form-control" id="phone" type="tel" wire:model="phone" placeholder="(123) 456-7890" data-sb-validations="required" />
                             <label for="phone">{{ __('Phone number') }}</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">{{ __('A phone number is required.') }}</div>
+                            @error('phone')
+                                <span class="error text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                            <textarea class="form-control" id="message" type="text" wire:model="message" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                             <label for="message">{{ __('Message') }}</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">{{ __('A message is required.') }}</div>
+                            @error('message')
+                                <span class="error text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                         <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">{{ __('Send') }}</button>
                     </form>
                 </div>
             </div>

@@ -69,6 +69,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="row mt-3">
+                        <div class="col-md-8 offset-md-4">
+                            Not a User? <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
