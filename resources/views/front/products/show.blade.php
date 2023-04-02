@@ -4,19 +4,30 @@
 
 @section('styles')
 <style>
-    .carousel-indicators{
-        bottom: -2em !important;
-    }
-    .carousel-indicators button img{
-        height: 4em !important;
-    }
 
     #carouselProductIndicators {
-        height: 320px !important;
+        height: 380px !important;
     }
 
-    #carouselProductIndicators .carousel-inner .carousel-item {
-        height: 400px !important;
+    .carousel-indicators{
+        bottom: 5em !important;
+    }
+
+    @media (min-width: 576px) {
+        .carousel-indicators{
+            bottom: -2em !important;
+        }
+        .carousel-indicators button img{
+            height: 4em !important;
+        }
+
+        #carouselProductIndicators {
+            height: 320px !important;
+        }
+
+        #carouselProductIndicators .carousel-inner .carousel-item {
+            height: 400px !important;
+        }
     }
 </style>
 @endsection
