@@ -31,10 +31,9 @@
             </div>
             <!-- Footer About Text-->
             <div class="col-lg-3">
-                <h4 class="text-uppercase mb-4">{{ __('About Persian Classic Product') }}</h4>
+                <h4 class="text-uppercase mb-4">{{ __('messages.footer.about_title') }}</h4>
                 <p class="lead mb-0">
-                    {{ __('Persian Classic Product is a online shop, products for persian all around the world.') }}
-
+                    {{ __('messages.footer.about') }}
                 </p>
             </div>
         </div>

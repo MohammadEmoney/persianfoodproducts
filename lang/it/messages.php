@@ -18,4 +18,8 @@ return [
      ",
     'activity' => "Honamic Tejarat Fidar Società iraniana opera in vari rami dell'industria alimentare in cui l'Iran è famoso. I prodotti comprendono spezie, erbe aromatiche, distillati e anche prodotti trasformati. Inoltre, l'Iran ha 31 province, ognuna delle quali ha prodotti alimentari unici. Negin Tejarat Company ha cercato di fornire a questi prodotti una qualità accettabile e aspetti economici.",
     'biography' => "Mahdi Rashvand Avaei ha conseguito il dottorato di ricerca presso la Scuola di Scienze Agrarie, Forestali, Alimentari e Ambientali dell'Università degli Studi della Basilicata. Esperto in ingegneria alimentare, ha pubblicato numerosi articoli scientifici su riviste altamente qualificate. Durante il periodo di master si è occupato della qualificazione e discriminazione degli oli commestibili come l'olio di oliva utilizzando metodi di spettroscopia e data mining. Inoltre, durante il corso di dottorato ha studiato il confezionamento in atmosfera modificata (MAP) per migliorare la durata di conservazione della frutta e verdura fresca. Attualmente è l'esperto e uomo d'affari della società Negin Persia e può rispondere alla domanda del consumatore. Di seguito puoi trovare i suoi recapiti.",
+    'footer' => [
+        'about' => 'Honamic Tejarat Fidar Iranian Company è un negozio online, prodotti per persiani in tutto il mondo.',
+        'about_title' => 'A proposito di Honamic Tejarat Fidar iraniano',
+    ],
 ];

@@ -13,12 +13,17 @@ return [
         To improve our sales and distribution network globally; therefore our brand get more worldwide.
         To be a pioneering role in the food industry as a prominent supplier of Iranian products.
     ',
-    'activity' => 'Honamic Tejarat Fidar Iranian Company operates in various branches of food industry in which Iran is famous. The products include spices, herbs, distillates and also processed products. In addition, Iran has 31 provinces that each of which has unique food products. Negin Tejarat Company has tried to provide these products with acceptable quality and economic aspects.',
+    'activity' => 'Honamic Tejarat Fidar Iranian Company operates in various branches of food industry in which Iran is famous. The products include spices, herbs, distillates and also processed products. In addition, Iran has 31 provinces that each of which has unique food products. Honamic Tejarat Fidar Iranian Company has tried to provide these products with acceptable quality and economic aspects.',
     'biography' => 'Mahdi Rashvand Avaei was PhD graduated from School of Agriculture, Forestry, Food and Environmental Science, University of Basilicata. He is expert in food engineering and he published several scientific papers in the high qualified journal. During the master period he worked on the qualification and discrimination of the edibles oils such as olive oil using spectroscopy and data mining methods. Also, during the PhD course he investigated the modified atmosphere packaging (MAP) to enhance the shelf life of the fresh fruits and vegetables. Currently he is the expert and business man of the Negin Persia Company and who can answer to the consumer’s question. In the following you can find his contact details.',
     'address_1' => 'Headquarter:N.96, Azimie district, Karaj city, Alborz province, Iran',
     'address_2' => 'Italy branch: N.33, Via Vescovado, Potenza city,Basilicata Province, Italy',
     'app_name' => 'Persian Food Product',
     'expert_bio_1' => "Mahdi Rashvand is a Ph.D. graduate of Food Engineering from Basilicata University, Italy. He has experience in the field of packaging food products as well as evaluating the quality of fresh fruits and vegetables using intelligent and novel methods. Currently, Mahdi cooperates with Honamic Tejarat Fidar Iranian Company as an advisor to purchase the highest quality food products and also some specific Iranian products such as handicrafts taking into account the economic aspect.",
     'expert_bio_2' => "Negin Farhang graduated is a master's graduate in accounting from Azad University of Noor, Iran. He has experience in analyzing financial competition in Iran's food market and Iran's specific products such as handicrafts. Currently, she works as a consultant in the financial field with Honamic Tejarat Fidar Iranian Company.",
+
+    'footer' => [
+        'about' => 'Honamic Tejarat Fidar Iranian Company is a online shop, products for persian all around the world.',
+        'about_title' => 'About Honamic Tejarat Fidar Iranian',
+    ],
 
 ];
