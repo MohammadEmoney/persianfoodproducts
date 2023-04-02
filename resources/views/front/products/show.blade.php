@@ -14,6 +14,10 @@
     #carouselProductIndicators {
         height: 320px !important;
     }
+
+    #carouselProductIndicators .carousel-inner .carousel-item {
+        height: 400px !important;
+    }
 </style>
 @endsection
 
@@ -41,10 +45,8 @@
                 </div>
             </div>
             <!-- Portfolio Grid Items-->
-            {{-- @dd($product->getMedia('Gallery')[0]->getUrl()) --}}
             <div class="row justify-content-center mb-3">
                 <div class="col-md-6">
-                    {{-- <img src="{{ $product->getFirstMediaUrl('SpecialImage') }}" alt="" class="w-100"> --}}
                     <!-- Carousel wrapper -->
                     <div id="carouselProductIndicators" class="carousel slide" data-bs-ride="carousel">
                         <!-- Slides -->
