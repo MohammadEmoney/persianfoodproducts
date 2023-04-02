@@ -25,16 +25,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index'])->name('front.home')->middleware('languages');
+Route::get('/', [HomeController::class, 'index'])->name('front.home')->middleware(['languages', 'visit-tracker']);
 Route::get('/languages', [LanguageController::class, 'setLanguage'])->name('front.langs');
 
-Route::middleware('languages')->group(function(){
+Route::middleware(['languages', 'visit-tracker'])->group(function(){
     Auth::routes();
 });
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::middleware('languages')->group(function(){
+Route::middleware(['languages', 'visit-tracker'])->group(function(){
     Route::get('categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('categories/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
     Route::get('products/search', [SearchController::class, 'index'])->name('products.search');
@@ -42,7 +42,7 @@ Route::middleware('languages')->group(function(){
     Route::get('products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
 });
 
-Route::group(['middleware' => 'languages', 'as' => 'front.'], function(){
+Route::group(['middleware' => ['languages', 'visit-tracker'], 'as' => 'front.'], function(){
     Route::get('about', [AboutController::class, 'index'])->name('about');
     Route::get('contact', [ContactController::class, 'index'])->name('contact');
 });
