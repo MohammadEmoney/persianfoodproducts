@@ -28,6 +28,6 @@ class ProductController extends Controller
     public function comment(Product $product, CommentRequest $request)
     {
         $product->comments()->create($request->validated());
-        return back()->with(['message' => __('comment added successfully')]);
+        return back()->with(['message' => __('messages.comment_created')]);
     }
 }

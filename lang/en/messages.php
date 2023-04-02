@@ -20,6 +20,7 @@ return [
     'app_name' => 'Persian Food Product',
     'expert_bio_1' => "Mahdi Rashvand is a Ph.D. graduate of Food Engineering from Basilicata University, Italy. He has experience in the field of packaging food products as well as evaluating the quality of fresh fruits and vegetables using intelligent and novel methods. Currently, Mahdi cooperates with Honamic Tejarat Fidar Iranian Company as an advisor to purchase the highest quality food products and also some specific Iranian products such as handicrafts taking into account the economic aspect.",
     'expert_bio_2' => "Negin Farhang graduated is a master's graduate in accounting from Azad University of Noor, Iran. He has experience in analyzing financial competition in Iran's food market and Iran's specific products such as handicrafts. Currently, she works as a consultant in the financial field with Honamic Tejarat Fidar Iranian Company.",
+    'comment_created' => 'Your comment has been successfully registered. The comment will be confirmed and displayed after review by the admin.',
 
     'footer' => [
         'about' => 'Honamic Tejarat Fidar Iranian Company is a online shop, products for persian all around the world.',

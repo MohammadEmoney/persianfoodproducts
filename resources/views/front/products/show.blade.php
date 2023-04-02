@@ -151,9 +151,7 @@
                             <div class="form-group mb-3">
                                 <label for="body" class="fw-bold mb-2">{{ __('Comment') }}</label>
                                 <textarea name="body" id="body" class="form-control" cols="30" rows="3"
-                                    placeholder="{{ __('Leave a comment...') }}" required>
-                                    {{ old('body') }}
-                                </textarea>
+                                    placeholder="{{ __('Leave a comment...') }}" required>{{ old('body') }}</textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
@@ -211,4 +209,20 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function () {
+        @if(session()->has('message'))
+            Swal.fire({
+                title: 'Success!',
+                text: "{{ session()->get('message') }}",
+                icon: 'success',
+                // confirmButtonText: 'Cool'
+            })
+        @endif
+
+    });
+</script>
 @endsection

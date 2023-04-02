@@ -7,6 +7,7 @@ return [
     'address_2' => 'Filiale Italia: N.33, Via Vescovado, Potenza città, Basilicata Province, Italia',
     'expert_bio_1' => "Mahdi Rashvand è un dottorato di ricerca. laureato in Ingegneria Alimentare presso l'Università della Basilicata, Italia. Ha esperienza nel campo del confezionamento di prodotti alimentari e nella valutazione della qualità di frutta e verdura fresca utilizzando metodi intelligenti e innovativi. Attualmente, Mahdi collabora con Honamic Tejarat Fidar Iranian Company come consulente per l'acquisto di prodotti alimentari di altissima qualità e anche alcuni prodotti iraniani specifici come l'artigianato, tenendo conto dell'aspetto economico.",
     'expert_bio_2' => "Negin Farhang si è laureato in contabilità presso l'Università Azad di Noor, Iran. Ha esperienza nell'analisi della concorrenza finanziaria nel mercato alimentare iraniano e di prodotti specifici dell'Iran come l'artigianato. Attualmente lavora come consulente in campo finanziario con Honamic Tejarat Fidar Iranian Company.",
+    'comment_created' => "Il tuo commento è stato registrato con successo. Il commento verrà confermato e visualizzato dopo la revisione da parte dell'amministratore.",
     'mission' => "Le missioni di pfp sono;
          Per fornire le richieste del mercato internazionale per tutti i paesi.
          Per visitare il consumatore con prodotti nuovi e speciali.
