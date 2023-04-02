@@ -11,7 +11,9 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        $product->load('category');
+        $product->load(['category', 'comments' => function($query){
+            $query->where('is_approved', 1);
+        }]);
         $relatedProducts = Product::isVisible()
                             ->inRandomOrder()
                             ->where('id', "!=", $product->id)
