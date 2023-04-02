@@ -19,5 +19,6 @@
         <!-- Bootstrap core JS-->
         @include('layouts.partials.script')
         @livewireScripts
+        <livewire:notification-sweet-alert />
     </body>
 </html>

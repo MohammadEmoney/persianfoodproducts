@@ -15,7 +15,7 @@
                     <div class="card border-0">
                         <div class="card-body p-3">
                             <div>
-                                <h5><i class="fa fa-location-dot"></i> {{ __('messages.app_name') }} {{ __('Location') }}</h5>
+                                <h5><i class="fa fa-location-dot"></i> {{ __('messages.company_location') }}</h5>
                                 <p>
                                     {{ __('messages.address_1') }}
                                     <br />

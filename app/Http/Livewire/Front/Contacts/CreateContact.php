@@ -41,11 +41,13 @@ class CreateContact extends Component
 
         $this->dispatchBrowserEvent('swal:modal', [
             'icon' => 'success',
-            'title' => 'پیام با موفقیت ثبت شد.',
-            'timerProgressBar' => true,
-            'timer' => 20000,
-            'confirmButtonText' => '<i class="fa fa-thumbs-up"></i> متوجه شدم',
-            'width' => 300,
+            'title' => __('messages.contact_created_title'),
+            'text' => __('messages.contact_created_text')
         ]);
+
+        $this->fullname = '';
+        $this->email = '';
+        $this->phone = '';
+        $this->message = '';
     }
 }

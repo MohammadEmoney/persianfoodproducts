@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'company_name' => 'Honamic Tejarat Fidar Compagnia iraniana',
+    'company_location' => 'Honamic Tejarat Fidar Compagnia iraniana',
     'about' => "Honamic Tejarat Fidar Società iraniana ha iniziato la sua attività nel 2012 sfruttando l'esperienza decennale dei suoi fondatori e beneficiando di uno staff scientifico e tecnico giovane ed efficiente. Inizialmente, la sua missione era quella di creare un team di distribuzione nella capitale dell'Iran (Teheran) con l'obiettivo di distribuire prodotti alimentari. A quel tempo, i migliori marchi disponibili erano inclusi nella classifica dei prodotti dell'azienda. Grazie all'esperienza maturata nel campo della distribuzione di prodotti alimentari, dal 2021, in collaborazione con Moshirpour Company, che è una società di distribuzione di prodotti iraniani in Italia, è stato attivato anche il dipartimento di commercio estero dell'azienda.",
     'about_2' => "Ora l'attività principale dell'azienda si basa sull'acquisto di prodotti alimentari iraniani dalle migliori aziende nazionali e sulla distribuzione di questi prodotti a distributori di prodotti alimentari attivi nell'area internazionale come i paesi europei. Ogni anno questa azienda valuta continuamente le proprie performance raccogliendo informazioni e dati di mercato, e con questo processo è riuscita a conquistare la fiducia e la soddisfazione dei clienti da un lato e dei fornitori esteri dall'altro, e per questo motivo oggi l'azienda è diventata una delle prime scelte di importanti aziende straniere.",
     'address_1' => 'Sede: N.96, distretto di Azimie, città di Karaj, provincia di Alborz, Iran',
@@ -8,6 +10,9 @@ return [
     'expert_bio_1' => "Mahdi Rashvand è un dottorato di ricerca. laureato in Ingegneria Alimentare presso l'Università della Basilicata, Italia. Ha esperienza nel campo del confezionamento di prodotti alimentari e nella valutazione della qualità di frutta e verdura fresca utilizzando metodi intelligenti e innovativi. Attualmente, Mahdi collabora con Honamic Tejarat Fidar Iranian Company come consulente per l'acquisto di prodotti alimentari di altissima qualità e anche alcuni prodotti iraniani specifici come l'artigianato, tenendo conto dell'aspetto economico.",
     'expert_bio_2' => "Negin Farhang si è laureato in contabilità presso l'Università Azad di Noor, Iran. Ha esperienza nell'analisi della concorrenza finanziaria nel mercato alimentare iraniano e di prodotti specifici dell'Iran come l'artigianato. Attualmente lavora come consulente in campo finanziario con Honamic Tejarat Fidar Iranian Company.",
     'comment_created' => "Il tuo commento è stato registrato con successo. Il commento verrà confermato e visualizzato dopo la revisione da parte dell'amministratore.",
+    'contact_created_title' => 'Messaggio inviato con successo!',
+    'contact_created_text' => 'Il tuo messaggio verrà letto e risposto via e-mail il prima possibile.',
+
     'mission' => "Le missioni di pfp sono;
          Per fornire le richieste del mercato internazionale per tutti i paesi.
          Per visitare il consumatore con prodotti nuovi e speciali.
