@@ -28,7 +28,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('front.home')->middleware('languages');
 Route::get('/languages', [LanguageController::class, 'setLanguage'])->name('front.langs');
 
-Auth::routes();
+Route::middleware('languages')->group(function(){
+    Auth::routes();
+});
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

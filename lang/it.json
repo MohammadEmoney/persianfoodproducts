@@ -40,5 +40,17 @@
     "Contact info" : "Informazioni di contatto",
     "Expert Staff" : "Personale esperto",
     "Fields Of Activity" : "Campi di attività",
-    "Our Mission" : "La nostra missione"
+    "Our Mission" : "La nostra missione",
+    "First Name" : "Nome di battesimo",
+    "Last Name" : "Cognome",
+    "Email Address" : "Indirizzo e-mail",
+    "Already have an account?" : "Hai già un account?",
+    "Not a User?" : "Non sei un utente?",
+    "Password" : "Password",
+    "Confirm Password" : "Conferma password",
+    "Forgot Your Password?" : "Hai dimenticato la password?",
+    "Register" : "Registrati",
+    "Login" : "Login",
+    "Logout" : "Disconnettersi",
+    "Remember Me" : "Ricordati di me"
 }

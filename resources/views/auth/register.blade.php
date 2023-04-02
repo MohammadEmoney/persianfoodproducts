@@ -99,6 +99,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="row mt-3">
+                        <div class="col-md-6 offset-md-4">
+                            <p>{{ __('Already have an account?') }} <a href="{{ route('login') }}">{{ __('Login') }}</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

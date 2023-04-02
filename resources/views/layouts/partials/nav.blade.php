@@ -28,6 +28,37 @@
                         <li><a class="dropdown-item" href="{{ route('front.langs', ['lang' => 'it']) }}"><span class="fi fi-it"></span></a></li>
                     </ul>
                 </li>
+                @auth
+                    <li class="nav-item mx-0 mx-lg-1 dropdown">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded dropdown-toggle"
+                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->full_name }}</a>
+                        <ul class="dropdown-menu w-25">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
+
+                @guest
+                    <li class="nav-item mx-0 mx-lg-1 d-flex text-white">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('login') }}">
+                            <i class="fa fa-lock"></i>
+                        </a>
+                        <span class="nav-link py-3 px-lg-0 px-2 rounded">/</span>
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('register') }}">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>
