@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Front\Contacts;
 
+use App\Mail\ContactMail;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class CreateContact extends Component
@@ -38,6 +40,8 @@ class CreateContact extends Component
             'phone' => $this->phone,
             'message' => $this->message,
         ]);
+
+        Mail::to("persianfoodproduct@gmail.com")->send(new ContactMail($contact));
 
         $this->dispatchBrowserEvent('swal:modal', [
             'icon' => 'success',
