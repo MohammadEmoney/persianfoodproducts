@@ -12,7 +12,6 @@ class HomeController extends Controller
     public function index()
     {
         $data = $this->homeData();
-        // dd($this->homeData());
         return view('front.home.index', compact('data'));
     }
 

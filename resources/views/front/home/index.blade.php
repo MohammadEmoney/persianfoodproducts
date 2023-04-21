@@ -20,16 +20,16 @@
             <!-- Icon divider -->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">Latest Products</div>
+                <div class="divider-custom-icon">{{ __('Latest Products') }}</div>
                 <div class="divider-custom-line"></div>
             </div>
 
             <div class="row">
                 @foreach ($data as $category => $products)
-                    <div class="col-md-4">
+                    {{-- <div class="col-md-4">
 
-                    </div>
-                    <section class="splide mb-4" aria-label="Slide Container Example" id="splide-{{ $loop->iteration }}">
+                    </div> --}}
+                    <section class="splide mb-4" aria-label="Slide Container Example" id="splide-{{ $loop->iteration }}" dir="ltr">
                         <div class="splide__track">
                             <ul class="splide__list">
                                 @foreach ($products as $key => $product)
